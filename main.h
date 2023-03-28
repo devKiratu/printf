@@ -11,5 +11,6 @@ int print_binary(unsigned int i);
 void convert_to_bin(unsigned int i);
 int format_output(const char *format, va_list args);
 int print_reverse(char *s);
+int print_rot13(char *s);
 
 #endif

@@ -60,6 +60,9 @@ int format_output(const char *format, va_list args)
 		case 'r':
 			count += print_reverse(va_arg(args, char *));
 			break;
+		case 'R':
+			count += print_rot13(va_arg(args, char *));
+			break;
 		case '%':
 			count += _putchar('%');
 			break;
