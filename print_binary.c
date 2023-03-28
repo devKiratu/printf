@@ -11,7 +11,10 @@ int print_binary(unsigned int i)
 	unsigned int x = i;
 
 	if (i == 0)
-		count = 1;
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	/* counts the characters to be printed once converted to binary */
 	while (x > 0)
@@ -34,10 +37,7 @@ void convert_to_bin(unsigned int i)
 	unsigned int rd;
 
 	if (i == 0)
-	{
-		_putchar('0');
 		return;
-	}
 
 	rd = i % 2;
 
