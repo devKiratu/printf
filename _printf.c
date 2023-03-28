@@ -57,6 +57,9 @@ int format_output(const char *format, va_list args)
 		case 'b':
 			count += print_binary(va_arg(args, int));
 			break;
+		case 'r':
+			count += print_reverse(va_arg(args, char *));
+			break;
 		case '%':
 			count += _putchar('%');
 			break;
