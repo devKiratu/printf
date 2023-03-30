@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				return (-1);
-			count += format_output(format, args);
+			count += format_output(format, &args);
 		}
 		else
 		{
@@ -40,38 +40,36 @@ int _printf(const char *format, ...)
  * @args: argument list
  * Return: number of characters printed
  */
-int format_output(const char *format, va_list args)
+int format_output(const char *format, va_list *args)
 {
-	int count = 0;
+	int count = 0, i = 0, found = 0, len;
+	print_ops options[] = {
+		{'c', print_char},
+		{'s', print_str},
+		{'i', print_number},
+		{'d', print_number},
+		{'b', print_binary},
+		{'r', print_reverse},
+		{'R', print_rot13},
+		{'%', print_mod},
+	};
 
-	switch (*format)
+	len = (sizeof(options) / sizeof(print_ops));
+	while (i < len)
 	{
-		case 'c':
-			count += _putchar((char)va_arg(args, int));
+		if (*format == options[i].type)
+		{
+			count += options[i].printer(args);
+			found = 1;
 			break;
-		case 's':
-			count += _puts(va_arg(args, char *));
-			break;
-		case 'd':
-		case 'i':
-			count += print_number(va_arg(args, int));
-			break;
-		case 'b':
-			count += print_binary(va_arg(args, int));
-			break;
-		case 'r':
-			count += print_reverse(va_arg(args, char *));
-			break;
-		case 'R':
-			count += print_rot13(va_arg(args, char *));
-			break;
-		case '%':
-			count += _putchar('%');
-			break;
-		default:
-			count += _putchar('%');
-			count += _putchar(*format);
-			break;
+		}
+		i++;
+	}
+
+	if (!found)
+	{
+		count += _putchar('%');
+		count += _putchar(*format);
 	}
 	return (count);
 }

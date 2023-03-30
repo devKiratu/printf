@@ -1,14 +1,20 @@
 #include "main.h"
 /**
  * print_number - prints given input using _putchar
- * @n: integer to print
+ * @args: list containing integer to print
  * Return: void
  */
-int print_number(int n)
+int print_number(va_list *args)
 {
-	int count = 0;
-	int first_digit, place_value = 1;
-	unsigned int input = n, new_n = n;
+	va_list ap;
+	int count = 0, n, first_digit, place_value = 1;
+	unsigned int input, new_n;
+
+	va_copy(ap, *args);
+
+	n = va_arg(ap, int);
+	input = n;
+	new_n = n;
 
 	/* handle negative numbers */
 	if (n < 0)

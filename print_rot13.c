@@ -2,12 +2,17 @@
 
 /**
  * print_rot13 - encrypts passed in string using rot13
- * @s: string to encrypt
+ * @args: va_list containing string to encrypt
  * Return: number of characters printed
  */
-int print_rot13(char *s)
+int print_rot13(va_list *args)
 {
+	va_list ap;
+	char *s;
 	int i = 0, count = 0;
+
+	va_copy(ap, *args);
+	s = va_arg(ap, char *);
 
 	while (s[i] != '\0')
 	{
