@@ -53,6 +53,7 @@ int format_output(const char *format, va_list args)
 		{'R', print_rot13},
 		{'%', print_mod},
 		{'S', print_non_printables},
+		{'u', print_unsigned_int},
 	};
 
 	len = (sizeof(options) / sizeof(print_ops));
