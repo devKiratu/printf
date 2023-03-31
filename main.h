@@ -26,6 +26,7 @@ int print_non_printables(va_list);
 int replace_with_hex(char);
 void format_hex(unsigned int);
 int print_unsigned_int(va_list args);
+int print_upper_hex(va_list args);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
