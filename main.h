@@ -28,6 +28,9 @@ void format_hex(unsigned int);
 int print_unsigned_int(va_list args);
 int print_upper_hex(va_list args);
 int print_lower_hex(va_list args);
+void convert_to_hex(unsigned int i, char fmt);
+int print_octal(va_list args);
+void convert_to_octal(unsigned int i);
 
 int _putchar(char c);
 int _printf(const char *format, ...);

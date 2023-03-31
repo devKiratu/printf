@@ -56,6 +56,7 @@ int format_output(const char *format, va_list args)
 		{'u', print_unsigned_int},
 		{'X', print_upper_hex},
 		{'x', print_lower_hex},
+		{'o', print_octal},
 	};
 
 	len = (sizeof(options) / sizeof(print_ops));
