@@ -52,6 +52,7 @@ int format_output(const char *format, va_list args)
 		{'r', print_reverse},
 		{'R', print_rot13},
 		{'%', print_mod},
+		{'S', print_non_printables},
 	};
 
 	len = (sizeof(options) / sizeof(print_ops));

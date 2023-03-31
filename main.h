@@ -22,6 +22,9 @@ int print_binary(va_list);
 int print_reverse(va_list);
 int print_rot13(va_list);
 int print_mod(va_list);
+int print_non_printables(va_list);
+int replace_with_hex(char);
+void format_hex(unsigned int);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
