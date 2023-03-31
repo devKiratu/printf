@@ -1,14 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * print_octal - prints octal
- * @args: list of arguments
- * Return: returns printed octal
+ * print_octal - formats unsigned integers as octal
+ * @args: va_list containing integer to format
+ * Return: returns number of characters printed
  */
-print_octal(va_lists args)
+int print_octal(va_list args)
 {
 	unsigned int i = va_arg(args, unsigned int);
 	int count = 0;
 	unsigned int num = i;
+
+	if (i == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	while (num > 0)
 	{
@@ -19,14 +25,17 @@ print_octal(va_lists args)
 	return (count);
 }
 /**
- * convert_to_octal - converts to octal
- * @i: parameter
+ * convert_to_octal - converts unsigend int to octal
+ * @i: unsigned integer to convertr
+ * Return: void
  */
 void convert_to_octal(unsigned int i)
 {
+	int rd;
+
 	if (i == 0)
 		return;
-	int rd = i % 8;
+	rd = i % 8;
 
 	i /= 8;
 	convert_to_octal(i);

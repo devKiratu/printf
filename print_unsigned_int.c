@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * print_unsigned_int - prints unsigned integer
- * @args: list of arguments
- * Return: unsigned int
+ * @args: va_list containing unsigned int to print
+ * Return: number of characters printed
  */
-int  print_unsigned_int(va_list args)
+int print_unsigned_int(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 	int count = 0;
