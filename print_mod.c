@@ -2,11 +2,11 @@
 
 /**
  * print_mod - prints the modulus operator
- * @args: unused parameter
+ * @args: va_list (unused parameter)
  * Return: 1
  */
-int print_mod(va_list *args)
+int print_mod(va_list args)
 {
-	(void)*args;
+	(void)args;
 	return (_putchar('%'));
 }

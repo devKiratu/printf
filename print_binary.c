@@ -2,18 +2,15 @@
 
 /**
  * print_binary - converts an unsigned integer to binary and prints it
- * @args: pointer to arguments list from where to extract unsigned int
+ * @args: va_list from where to extract unsigned int
  * Return: number of characters printed
  */
-int print_binary(va_list *args)
+int print_binary(va_list args)
 {
 	unsigned int i, x;
-	va_list ap;
 	int count = 0;
 
-	va_copy(ap, *args);
-
-	i = va_arg(ap, unsigned int);
+	i = va_arg(args, unsigned int);
 	x = i;
 
 	if (i == 0)

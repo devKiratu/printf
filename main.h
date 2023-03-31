@@ -12,20 +12,20 @@
 typedef struct ops
 {
 	char type;
-	int (*printer)(va_list *);
+	int (*printer)(va_list);
 } print_ops;
 
-int print_char(va_list *);
-int print_str(va_list *);
-int print_number(va_list *);
-int print_binary(va_list *);
-int print_reverse(va_list *);
-int print_rot13(va_list *);
-int print_mod(va_list *);
+int print_char(va_list);
+int print_str(va_list);
+int print_number(va_list);
+int print_binary(va_list);
+int print_reverse(va_list);
+int print_rot13(va_list);
+int print_mod(va_list);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 void convert_to_bin(unsigned int i);
-int format_output(const char *format, va_list *args);
+int format_output(const char *format, va_list args);
 
 #endif

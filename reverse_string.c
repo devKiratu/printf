@@ -4,14 +4,12 @@
  * @args: va_list containing string to be printed
  * Return: returns number of chars printed
  */
-int print_reverse(va_list *args)
+int print_reverse(va_list args)
 {
-	va_list ap;
 	char *s;
 	int count = 0, len = 0;
 
-	va_copy(ap, *args);
-	s = va_arg(ap, char *);
+	s = va_arg(args, char *);
 
 	/* get string length */
 	while (s[len] != '\0')

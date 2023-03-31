@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				return (-1);
-			count += format_output(format, &args);
+			count += format_output(format, args);
 		}
 		else
 		{
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
  * @args: argument list
  * Return: number of characters printed
  */
-int format_output(const char *format, va_list *args)
+int format_output(const char *format, va_list args)
 {
 	int count = 0, i = 0, found = 0, len;
 	print_ops options[] = {

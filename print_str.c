@@ -2,17 +2,15 @@
 
 /**
  * print_str - prints a string on the standard output
- * @args: arguments list from where to extract string to print
+ * @args: va_list from where to extract string to print
  * Return: number of characters printed
  */
-int print_str(va_list *args)
+int print_str(va_list args)
 {
-	va_list ap;
 	char *s;
 	int i = 0;
 
-	va_copy(ap, *args);
-	s = va_arg(ap, char *);
+	s = va_arg(args, char *);
 
 	if (s == NULL)
 		s = "(null)";
