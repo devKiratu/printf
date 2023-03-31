@@ -57,6 +57,7 @@ int format_output(const char *format, va_list args)
 		{'X', print_upper_hex},
 		{'x', print_lower_hex},
 		{'o', print_octal},
+		{'p', print_address},
 	};
 
 	len = (sizeof(options) / sizeof(print_ops));

@@ -31,6 +31,8 @@ int print_lower_hex(va_list args);
 void convert_to_hex(unsigned int i, char fmt);
 int print_octal(va_list args);
 void convert_to_octal(unsigned int i);
+int print_address(va_list);
+void format_address(unsigned long int);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
